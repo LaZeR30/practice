@@ -1,0 +1,19 @@
+
+body { center }
+
+h1 { background-color: black; color: white; text-align: center}
+
+.big-text {font-size: 40px;}
+.tiny-text {font-size: 10px;}
+
+.bold-text {font-weight: bold;}
+
+.font-google { font-family: "Comic Sans MS" ;}
+
+.combo { font-size: 30px; font-weight: bold; color:orange; }
+
+.styledFont { color: green}
+
+#styledImage { border-width: thick;
+               border-style: dotted;
+               border-color: red}
