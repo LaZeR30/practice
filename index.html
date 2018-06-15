@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MODULUS and PRIME </title>
+    <!-- Here we create a bit of CSS for classes called ".fancy" -->
+    <style>
+      .fancy {
+        font-size: 100px;
+        color: green;
+      }
+    </style>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+  
+  <body>
+	<button id="button1">MODULUS!</button>
+    <div id="empty-div"></div>
+	<button id="button2">PRIME!</button>
+	
+    <script type="text/javascript">
+
+		function checkFizzBuzz()
+		{
+			var iTargetNum =  Math.floor(Math.random() * 100);
+			var iDivisor3 = iTargetNum % 3 ;  //use mod or something 
+			var iDivisor5 = iTargetNum % 5 ;  //use mod or something 
+			var bDivisor3;  var bDivisor5;
+			console.log("iTargetNum=", iTargetNum, "iDivisor3=", iDivisor3, "iDivisor5=", iDivisor5);
+
+			if (iDivisor3 == 0 )
+			{
+				 bDivisor3 = true; 
+				console.log ("fizz");
+			}
+
+			if (iDivisor5 == 0 )
+			{
+				 bDivisor5 = true; 
+				console.log ("buzz");
+			}
+
+			if ( bDivisor3 && bDivisor5 ) 
+			{
+				console.log ("fizzbuzz");
+			}
+		}
+
+function checkPrime()
+{
+	var iPrimeNum = Math.floor(Math.random() * 125);  
+	var bPrime; var iModulus = 0; var iDivisor = 0 ; var i; 
+	
+	for (i = 2; i < iPrimeNum; i++) {
+
+		iModulus = iPrimeNum % i; 
+		
+		if ((iModulus) === 0){
+			bPrime = false ;
+			iDivisor = i ;
+			console.log("INSIDE MOD ZERO > Number=", iPrimeNum, "FinalDivisor=", i, "Modulus=", iModulus, "bPrime=", bPrime);
+			break ; 
+		}
+		
+		if ((iModulus) > 1) {
+			console.log("INSIDE PRIME > Number=", iPrimeNum, "FinalDivisor=", i, "Modulus=", iModulus, "bPrime=", bPrime);
+			iDivisor = i ;
+			bPrime = true ;
+		}
+	}
+	console.log("FINAL VERDICT > Number=", iPrimeNum, "FinalDivisor=", iDivisor, "Modulus=", iModulus, "bPrime=", bPrime);
+}
+	
+		$("#button1").on("click", function() {
+			checkFizzBuzz() ; 	
+		});
+		
+		$("#button2").on("click", function() {
+			checkPrime() ; 	
+		});
+		
+    </script>
+	
+
+	
+  </body>
+</html>
